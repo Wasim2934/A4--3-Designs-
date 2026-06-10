@@ -1,0 +1,78 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    width: 100%;
+    background-color: black;
+}
+
+main {
+    height: 100%;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+
+    grid-template-areas: 
+    "top-img top-symbol top-categories top-marketing"
+    "top-img top-symbol top-categories left-img"
+    "coin location top-categories left-img"
+    "coin location top-categories left-img"
+    "coin award rating rating"
+    "coin app-store rating rating"
+    ;
+}    
+                   
+.top-img {
+    border-color: rgb(110, 162, 207);
+    grid-area: top-img;
+}
+
+.top-symbol {
+    background-color: rgb(167, 113, 41);
+    grid-area: top-symbol;
+}
+
+.top-categories {
+    background-color: rgb(76, 197, 197);
+    grid-area: top-categories;
+}
+
+.top-marketing {
+    background-color: rgb(18, 154, 109);
+    grid-area: top-marketing;
+}
+
+.coin {
+    background-color: rgba(240, 255, 255, 0.699);
+    grid-area: coin;
+}
+
+.location {
+    background-color: rgb(255, 255, 0);
+    grid-area: location;
+}
+
+.left-img {
+    background-color: bisque;
+    grid-area: left-img;
+}
+
+.awards {
+    background-color: red;
+    grid-area: awards;
+}
+
+.app-store {
+    background-color: rgb(103, 80, 80);
+    grid-area: app-store;
+}
+
+.rating {
+    background-color: green;
+    grid-area: rating;
+}
