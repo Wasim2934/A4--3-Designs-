@@ -1,78 +1,246 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
 }
 
-html, body {
-    height: 100%;
-    width: 100%;
-    background-color: black;
+html,
+body {
+  height: 100%;
+  width: 100%;
+  background-color: rgb(80, 80, 80);
 }
 
 main {
-    height: 100%;
-    width: 100%;
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(6, 1fr);
+  height: 100%;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+  background-color: rgb(0, 0, 0);
+  border-radius: 15px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  gap: 12px;
+  padding: 20px;
 
-    grid-template-areas: 
+  grid-template-areas:
     "top-img top-symbol top-categories top-marketing"
     "top-img top-symbol top-categories left-img"
     "coin location top-categories left-img"
     "coin location top-categories left-img"
-    "coin award rating rating"
-    "coin app-store rating rating"
-    ;
-}    
-                   
+    "coin awards rating rating"
+    "coin app-store rating rating";
+}
+
+main > * {
+  border-radius: 30px;
+}
+
 .top-img {
-    border-color: rgb(110, 162, 207);
-    grid-area: top-img;
+  background-color: rgb(28, 28, 28);
+  grid-area: top-img;
+  overflow: hidden;
+  padding: 10px;
+}
+
+.top-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 30px;
 }
 
 .top-symbol {
-    background-color: rgb(167, 113, 41);
-    grid-area: top-symbol;
+  background-color: rgb(28, 28, 28);
+  grid-area: top-symbol;
+  display: grid;
+}
+
+.symbol {
+  align-self: center;
+  justify-self: center;
+  font-size: 70px;
+  border: 2px solid rgb(161, 255, 55);
+  border-radius: 100px;
+  padding: 30px;
 }
 
 .top-categories {
-    background-color: rgb(76, 197, 197);
-    grid-area: top-categories;
+  background-color: rgb(76, 197, 197);
+  grid-area: top-categories;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  font-size: 20px;
+  color: white;
+  background-color: rgb(28, 28, 28);
 }
 
 .top-marketing {
-    background-color: rgb(18, 154, 109);
-    grid-area: top-marketing;
+  background: linear-gradient(90deg, #b75cff, #9b4dff);
+  grid-area: top-marketing;
+  color: white;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  justify-content: center;
+  font-size: 13px;
+}
+
+.top-left-line {
+  height: 30px;
+  width: 0.1px;
+  background-color: white;
 }
 
 .coin {
-    background-color: rgba(240, 255, 255, 0.699);
-    grid-area: coin;
+  background-color: black;
+  grid-area: coin;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  padding: 20px;
+  border: 2px solid rgb(161, 255, 55);
+}
+
+.coin h1 {
+  font-weight: 700;
+  color: white;
+  letter-spacing: 5px;
+}
+
+.coin p {
+  color: #b75cff;
+}
+
+.coin p:nth-child(4) {
+  color: white;
+}
+
+.coin-line {
+  width: 100%;
+  height: 2px;
+  background-color: gray;
+}
+
+.barcode {
+  height: 50px;
+  width: 100%;
+  background-color: white;
+  display: flex;
+  gap: 10px;
+}
+
+.barcode div {
+  background-color: black;
+  height: 100%;
+  width: 10px;
 }
 
 .location {
-    background-color: rgb(255, 255, 0);
-    grid-area: location;
+  background-color: rgb(28, 28, 28);
+  grid-area: location;
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  padding-left: 20px;
+  color: white;
+  justify-content: space-evenly;
+}
+
+.location p:nth-child(1) {
+  font-size: 10px;
+  color: gray;
+}
+
+.location p:nth-child(3) {
+  font-size: 10px;
+  color: gray;
 }
 
 .left-img {
-    background-color: bisque;
-    grid-area: left-img;
+  background-color: bisque;
+  grid-area: left-img;
+  background-color: rgb(28, 28, 28);
+  overflow: hidden;
+  padding: 10px;
+}
+
+.left-img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 30px;
 }
 
 .awards {
-    background-color: red;
-    grid-area: awards;
+  background-color: rgb(28, 28, 28);
+  grid-area: awards;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  font-size: 40px;
 }
 
 .app-store {
-    background-color: rgb(103, 80, 80);
-    grid-area: app-store;
+  background-color: rgb(161, 255, 55);
+  grid-area: app-store;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.app-store h2 {
+  font-size: 15px;
+}
+
+.app-store p {
+  font-size: 12px;
 }
 
 .rating {
-    background-color: green;
-    grid-area: rating;
+  background-color: white;
+  grid-area: rating;
+  display: flex;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.rating-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rating-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.rating-right h1 {
+  font-size: 70px;
+}
+
+.rating-right button {
+  font-size: 15px;
+  padding: 8px 15px;
+  border: none;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #b75cff, #9b4dff);
+  color: white;
+}
+
+hr {
+  width: 100%;
+  height: 1px;
+  background-color: gray;
+  border: none;
 }
